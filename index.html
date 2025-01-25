@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prathamesh's Portfolio</title>
+    <title>Developer Portfolio</title>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
@@ -13,8 +13,7 @@
         <div class="container">
             <div class="nav-bar">
                 <div class="logo-container">
-                    <img src="logo.png" class="logo-icon">
-                    <div class="logo-text">rathamesh Deshmukh</div>
+                    <div class="logo-text">Prathamesh Deshmukh</div>
                 </div>
                 <div class="nav-items">
                     <div><a href="#projects">Projects</a></div>
@@ -23,10 +22,9 @@
                 </div>
                   <!-- Dark Mode Toggle Button -->
                 <div class="toggle-theme">
-                  <button id="theme-toggle-btn">Night mode </button>
+                  <button id="theme-toggle-btn">Dark Mode</button>
                  </div>
              </div>
-           
       </div>
         <div class="hero-section">
             <div class="faded-text">Prathamesh</div>
@@ -38,34 +36,17 @@
                 <div class="hero-section-description">
                     I'm a software developer and here is my portfolio website. Here you'll learn about my journey as a software developer.
                 </div>
-                <div class="btn-pink" id="btn">Hire me</div>
+                <a class="btn-pink" id="btn" href="#contactme">Hire me </a> 
             </div>
             <div class="hero-section-right">
                 <div class="user-image">
-                    <img src="jonny.jpeg" alt="" />
+                    <img width="180" src="me.jpg" alt="" />
                 </div>
             </div>
         </div>
         <section id="contactme" class="contact-section">
             <h2>Contact Me</h2>
-            <!--  <section class="contact section-slide-in">
-                <h2>Contact Me</h2>
-                <form id="contactForm">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-
-                    <button type="submit">Send</button>
-                </form>
-                <p id="responseMessage" style="display:none;"></p>
-            </section>
- -->
-            <form class="contact-form" action="your-form-handler.php" method="POST">
+            <form class="contact-form" onsubmit="sendEmail(); reset(); return false;" >
                 <div class="form-group">
                     <label for="name">Your Name</label>
                     <input type="text" id="name" name="name" placeholder="Enter your name" required>
@@ -83,11 +64,7 @@
 
                 <button type="submit" class="btn-pink">Send Message</button>
             </form>
-             <p id="responseMessage" style="display:none;"></p>
         </section>
-<form class="contact-form" action="thank-you.html" method="POST" id="contact-form">
-    <!-- form fields -->
-</form>
 
         <!--
         <div class="project-section">
@@ -126,18 +103,19 @@
 
                 <div class="footer-right">
                     <div class="social-icons">
-                        <a href="https://github.com/yourprofile" target="_blank"><i class="fa-brands fa-github"></i></a>
-                        <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="mailto:your-email@example.com"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="https://github.com/sujalc879" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/sujal-chaudhary-542a0431b/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://mail.google.com/mail/work.sujal.dev@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
                     </div>
-                    <p class="contact-info">Contact me at: prathameshdeshmukh480@gmail.com</p>
+                    <p class="contact-info">prathameshdeshmukh480@gmail.com</p>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2024 Prathamesh Deshmukh. All rights reserved.</p>
             </div>
         </footer>
-        
+
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
