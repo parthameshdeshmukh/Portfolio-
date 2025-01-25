@@ -1,13 +1,8 @@
 // Typed.js initialization
 var typeData = new Typed(".role", {
     strings: [
-        "Plumber",
-        "Astronaut",
-        "Daddy",
         "Full Stack Developer",
-        "Web Developer",
-        "Backend Developer",
-        "Coder"
+        "Tech Enthusiast"
     ],
     loop: true,
     typeSpeed: 100,
@@ -26,7 +21,16 @@ if (currentTheme === 'dark') {
 }
 
 toggleBtn.addEventListener('click', function() {
-    body.classList.toggle('dark-mode');
+    
+    if (toggleBtn.innerHTML === "Dark Mode") {
+        
+        body.classList.add('dark-mode');
+        toggleBtn.innerHTML = "Light Mode"
+        
+    } else {
+        body.classList.remove('dark-mode')
+        toggleBtn.innerHTML = "Dark Mode"
+    }
 
     // Save the user's preference in localStorage
     if (body.classList.contains('dark-mode')) {
@@ -35,8 +39,25 @@ toggleBtn.addEventListener('click', function() {
         localStorage.setItem('theme', 'light');
     }
 });
-// Form Submission
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the default form submission
-    window.location.href = "thank-you.html"; // Redirect to Thank You page
-});
+
+function sendEmail() {
+    Email.send({
+        Host : "smtp.elasticemail.com",
+        Username : "work.sujal.dev@gmail.com",
+        Password : "D2314FBB789AB57F9153716952B8EFF4A8DB",
+        To : 'work.sujal.dev@gmail.com',
+        From : "work.sujal.dev@gmail.com",
+        Subject : "This is the enquiry Mail",
+        Body : `Username : ${document.getElementById("name").value} <br>
+                User Email : ${document.getElementById("email").value} <br>
+                User Message : ${document.getElementById("message").value}`
+            }).then(
+      message => alert("Message Sent Successfully")
+    );
+}
+
+let mailButton = document.querySelector(".contact-info");
+
+mailButton.addEventListener("click", () => {
+    location.href = "https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTLqDbthjCdClxvBdRmhstmtlnNkwJgHGxGBTLGlnDwhXzfCgDmcLQzMgnpvqMkmdlXrHg";
+})
